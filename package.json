@@ -1,0 +1,27 @@
+{
+  "name": "grunt-version",
+  "version": "0.0.0",
+  "description": "Updates your project version",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ndelitski/grunt-version.git"
+  },
+  "keywords": [
+    "grunt",
+    "packages.json",
+    "version"
+  ],
+  "author": "Nick Delitski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ndelitski/grunt-version/issues"
+  },
+  "homepage": "https://github.com/ndelitski/grunt-version",
+  "dependencies": {
+    "shelljs": "^0.3.0"
+  }
+}

@@ -1,8 +1,3 @@
-var fs = require('fs'),
-    path = require('path'),
-    packageFilePath = path.resolve(__dirname, './../package.json'),
-    packages = require(packageFilePath);
-
 require('shelljs/global');
 
 module.exports = function(grunt) {
@@ -11,9 +6,12 @@ module.exports = function(grunt) {
             grunt.fail.fatal('no version specified');
         }
 
+        var packages = grunt.file.readJSON('package.json');
+
         //update package.json
         packages.version = version;
-        fs.writeFileSync(packageFilePath, JSON.stringify(packages, null, 2));
+        grunt.file.write('package.json', JSON.stringify(packages, null, 2));
+
         //commit changes
         exec('git add package.json');
         exec('git commit -m "bumped to ' + version + '"');
